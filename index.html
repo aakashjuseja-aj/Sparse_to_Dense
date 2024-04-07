@@ -1,0 +1,264 @@
+
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>mip-NeRF</title>
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- <base href="/"> -->
+
+        <!--FACEBOOK-->
+    <meta property="og:image" content="https://jonbarron.info/mipnerf/img/rays_square.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="682">
+    <meta property="og:image:height" content="682">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://jonbarron.info/mipnerf/"/>
+    <meta property="og:title" content="mip-NeRF" />
+    <meta property="og:description" content="Project page for Mip-NeRF: A Multiscale Representation for Anti-Aliasing Neural Radiance Fields." />
+
+        <!--TWITTER-->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="mip-NeRF" />
+    <meta name="twitter:description" content="Project page for Mip-NeRF: A Multiscale Representation for Anti-Aliasing Neural Radiance Fields." />
+    <meta name="twitter:image" content="https://jonbarron.info/mipnerf/img/rays_square.png" />
+
+
+<!--     <link rel="apple-touch-icon" href="apple-touch-icon.png"> -->
+  <!-- <link rel="icon" type="image/png" href="img/seal_icon.png"> -->
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css">
+    <link rel="stylesheet" href="css/app.css">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
+    
+    <script src="js/app.js"></script>
+</head>
+
+<body>
+    <div class="container" id="main">
+        <div class="row">
+            <h2 class="col-md-12 text-center">
+                Sparse Points to Dense Clouds:</br>  Enhancing 3D  Detection with Limited LiDAR Data</br> 
+            </h2>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <ul class="list-inline">
+                    <li>
+                        <a href="">
+                          Aakash Kumar
+                        </a>
+                        </br>University of Central Florida
+                    </li>
+                    <li>
+                        <a href="https://www.crcv.ucf.edu/chenchen/index.html">
+                            Chen Chen
+                        </a>
+                        </br>University of Central Florida
+                    </li>
+                    <li>
+                        <a href="">
+                         Ajmal Mian
+                        </a>
+                        </br>University of Western Australia
+                    </li><br>
+                    <li>
+                        <a href="">
+                        Neils Lobo
+                        </a>
+                        </br>University of Central Florida
+                    </li>
+                    <li>
+                        <a href="">
+                          Mubarak Shah
+                        </a>
+                        </br>Univerity of Central Florida
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="row">
+                <div class="col-md-4 col-md-offset-4 text-center">
+                    <ul class="nav nav-pills nav-justified">
+                        <li>
+                            <a href="">
+                            <image src="img/mip_paper_image.jpg" height="60px">
+                                <h4><strong>Paper</strong></h4>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                            <image src="img/youtube_icon.png" height="60px">
+                                <h4><strong>Video</strong></h4>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                            <image src="img/github.png" height="60px">
+                                <h4><strong>Code</strong></h4>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Abstract
+                </h3>
+                <!--<image src="img/architecture_iros2024.png" class="img-responsive" alt="overview"><br>-->
+                <p class="text-justify">
+3D detection is a critical task that enables machines to identify and locate objects in three-dimensional space. It has a broad range of applications in several fields, including autonomous driving, robotics and augmented reality. Monocular 3D detection is attractive as it requires only a single camera, however, it lacks the accuracy and robustness required for real world applications. High resolution LiDAR on the other hand, can be expensive and lead to interference problems in heavy traffic given their active transmissions.
+We propose a balanced approach that combines the advantages of monocular and point cloud-based 3D detection. Our method requires only a small number of 3D points, that can be obtained from a low-cost, low-resolution sensor. Specifically, we use only 512 points, which is just 1% of a full LiDAR frame in the KITTI dataset. Our method reconstructs a complete 3D point cloud from this limited 3D information combined with a single image. The reconstructed 3D point cloud and corresponding image can be used by any multi-modal off-the-shelf detector for 3D object detection. By using the proposed network architecture with an off-the-shelf multi-modal 3D detector, the accuracy of 3D detection improves by 20% compared to the state-of-the-art monocular detection methods and 6% to 9% compare to the baseline multi-modal methods on KITTI and JackRabbot datasets.
+                </p>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Video
+                </h3>
+                <div class="text-center">
+                    <div style="position:relative;padding-top:56.25%;">
+                        <iframe src="https://www.youtube.com/embed/u_MjZxZEFc4" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Proposed Approach
+                </h3>
+                <p class="text-justify">
+                    Overview of the proposed 3D object detection approach. The architecture accepts an input image and a set of sparse LiDAR points, which it then processes to generate a high-resolution point cloud. This dense point cloud, once reconstructed, is paired with the original image and fed into an off-the-shelf 3D object detector, enabling the accurate detection and localization of 3D objects within the scene.
+                </p>
+                <p style="text-align:center;">
+                    <image src="img/overall_idea3.png" height="50px" class="img-responsive" style="display: block; margin: auto; width: 700px;">
+                </p>
+                <h3>
+                    Network Architecture
+                </h3>
+                <p class="text-justify">
+                    Proposed architecture for generating a dense point cloud from an input image and a sparse set of 3D points from a low-cost sensor. Initially, the image is split into 465 patches which are transformed into 256-dimensional vectors by a CNN based feature extractor. These feature vectors combined with sampled 3D points (Point Queries) are passed through a transformer encoder-decoder framework. The encoder uses self-attention to understand patch details, while the decoder employs cross-attention with image-tokens to produce point-tokens for each query point. These tokens are processed by a Point Cloud (PC) Generator that translates them into a dense point cloud. Training involves a Chamfer distance loss function, comparing the predicted point groups with ground-truth data, derived from nearest neighbors to the query points. The outcome is a detailed point cloud useful for 3D object detection and other applications.
+                <p style="text-align:center;">
+                    <image src="img/architecture_iros2024.png" height="50px" class="img-responsive">
+                </p>
+                <!---
+                <video id="v0" width="100%" autoplay loop muted>
+                  <source src="img/pe_anim_horiz.mp4" type="video/mp4" />
+                </video>
+                <p class="text-justify">
+                    Here, we show how these feature vectors change as a function of a point moving in 1D space.
+                    <br><br>
+                    Our <em>integrated positional encoding</em> considers Gaussian <em>regions</em> of space, rather than infinitesimal points. This provides a natural way to input a "region" of space as query to a coordinate-based neural network, allowing the network to reason about sampling and aliasing. The expected value of each positional encoding component has a simple closed form:
+                </p>
+                <p style="text-align:center;">
+                    <image src="img/ipe_eqn_under_pad.png" height="30px" class="img-responsive">
+                </p>
+                <video id="v0" width="100%" autoplay loop muted>
+                  <source src="img/ipe_anim_horiz.mp4" type="video/mp4" />
+                </video>
+                <p class="text-justify">
+                    We can see that when considering a wider region, the higher frequency features automatically shrink toward zero, providing the network with lower-frequency inputs. As the region narrows, these features converge to the original positional encoding.
+                </p>
+            -->
+            </div>
+        </div>
+            
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                   Qualitative Results
+                </h3>
+                <p class="text-justify">
+                    Ground truth point cloud (LiDAR) compared to point cloud predictions generated using $512$ query points. Each query point generates 32 points. We show the query points with increased point size for better visibility.
+                </p>
+                <p style="text-align:center;">
+                    <image src="img/reconstruction.png" class="img-responsive" alt="scales" style="display: block; margin: auto; width: 400px;">
+                </p>
+
+                <h4>
+                    Qualitivate Results of 3D Detections
+                 </h4>
+                <p style="text-align:center;">
+                    <image src="img/Picture1.png" class="img-responsive" alt="scales" style="display: block; margin: auto; width: 650px;">
+                </p>
+                <p style="text-align:center;">
+                    <image src="img/Picture2.png" class="img-responsive" alt="scales" style="display: block; margin: auto; width: 650px;">
+                </p>
+                <p style="text-align:center;">
+                    <image src="img/Picture3.png" class="img-responsive" alt="scales" style="display: block; margin: auto; width: 650px;">
+                </p>
+                <p style="text-align:center;">
+                    <image src="img/Picture4.png" class="img-responsive" alt="scales" style="display: block; margin: auto; width: 650px;">
+                </p>
+                <p style="text-align:center;">
+                    <image src="img/Picture5.png" class="img-responsive" alt="scales" style="display: block; margin: auto; width: 650px;">
+                </p>
+                <p style="text-align:center;">
+                    <image src="img/Picture6.png" class="img-responsive" alt="scales" style="display: block; margin: auto; width: 650px;">
+                </p>
+            </div>
+        </div>
+                    
+            
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Citation
+                </h3>
+                <div class="form-group col-md-10 col-md-offset-1">
+                    <textarea id="bibtex" class="form-control" readonly>
+@article{SparceToDence,
+    title={Sparse Points to Dense Clouds: Enhancing 3D 
+        Detection with Limited LiDAR Data},
+    author={Aakash Kumar and Chen Chen and 
+            Ajmal Mian and Neils Lobo and 
+            Mubarak Shah},
+    journal={},
+    year={}
+}</textarea>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Acknowledgements
+                </h3>
+                <p class="text-justify">
+               </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
